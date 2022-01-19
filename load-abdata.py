@@ -53,12 +53,8 @@ def run(argv=None):
     # where Dataflow should store temp files.
     p = beam.Pipeline(options=PipelineOptions(pipeline_args))
 
-    (p
-     # Read the file. This is the source of the pipeline. All further
-     # processing starts with lines read from the file. We use the input
-     # argument from the command line. We also skip the first line which is a
-     # header row.
-     | 'Read from a File' >> beam.io.ReadFromText(known_args.input,
+    (
+     p | 'Read from a File' >> beam.io.ReadFromText(known_args.input,
                                                   skip_header_lines=1)
      # This stage of the pipeline translates from a CSV file single row
      # input as a string, to a dictionary object consumable by BigQuery.
