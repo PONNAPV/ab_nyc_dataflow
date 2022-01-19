@@ -5,8 +5,8 @@ import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 import os
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/Users/praveen/Documents/code/kaggle-abnb-nyc-dataflow/bamboo-mercury-335312-85be2736674c.json"
-
+#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/Users/praveen/Documents/code/kaggle-abnb-nyc-dataflow/bamboo-mercury-335312-85be2736674c.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/praveen_ponna/ab_nyc/bamboo-mercury-335312-85be2736674c.json"
 
 class DataIngestion:
     def parse_method(self, string_input):
